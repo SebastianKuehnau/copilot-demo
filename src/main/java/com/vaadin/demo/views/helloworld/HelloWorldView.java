@@ -1,5 +1,7 @@
 package com.vaadin.demo.views.helloworld;
 
+import com.vaadin.flow.component.html.Image;
+
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
@@ -34,5 +36,4 @@ public class HelloWorldView extends VerticalLayout {
 
         add(formLayout);
     }
-
 }
