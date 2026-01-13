@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
@@ -13,7 +14,7 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 @PageTitle("Hello World")
 @Route("")
 @Menu(order = 0, icon = LineAwesomeIconUrl.GLOBE_SOLID)
-public class HelloWorldView extends HorizontalLayout {
+public class HelloWorldView extends VerticalLayout {
 
     private TextField name;
     private Button sayHello;
@@ -26,10 +27,12 @@ public class HelloWorldView extends HorizontalLayout {
         });
         sayHello.addClickShortcut(Key.ENTER);
 
-        setMargin(true);
-        setVerticalComponentAlignment(Alignment.END, name, sayHello);
+        var formLayout = new HorizontalLayout(name, sayHello);
 
-        add(name, sayHello);
+        formLayout.setMargin(true);
+        formLayout.setVerticalComponentAlignment(Alignment.END, name, sayHello);
+
+        add(formLayout);
     }
 
 }
